@@ -36,7 +36,7 @@ public class SelfClassLoader extends ClassLoader{
             URL url = new URL("file:///home/badmonkey/code/java/javasec/src/javasec/cmd/Cmd.class");
             URLClassLoader ucl = new URLClassLoader(new URL[]{url});
             Class cmd = ucl.loadClass(className);
-            String command = "whoami";
+            String command = "ls -al";
             Method exec = cmd.getMethod("exec",String.class);
             Process process = (Process) exec.invoke(null,command);
             BufferedReader bfr = new BufferedReader(new InputStreamReader(process.getInputStream()));
