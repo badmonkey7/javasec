@@ -11,7 +11,7 @@ public class Cmd {
         return Runtime.getRuntime().exec(cmd);
     }
     public static void main(String[] args) {
-        File file = new File("src/javasec/cmd/Cmd.class");
+        File file = new File("src/javasec/jnisec/CmdDemo.class");
         try(FileInputStream fis = new FileInputStream(file);BufferedInputStream bis = new BufferedInputStream(fis);){
             byte[] byteCode = bis.readAllBytes();
             for (byte b:byteCode){
